@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management</title>
+</head>
+<body>
+    <h1 onclick="alert('Hello Programmer')">Exploring Event</h1>
+    <h3 onclick="console.log('Hello Programmer')">Lorem Ipsum</h3>
+    <button onclick="alert(6)">Click Me</button>
+    <button onclick="handleClick()">Plese No Click</button>
+    <button onclick="handleClick11()">Today Date</button>
+    <button onmouseout="handleClick22()">Mouse Out</button>
+    <br>
+    <br>
+    <button>click me-1</button>
+    <button id="second">click me-2</button>
+    <button id="third">click me-3</button>
+    <button id="fourth">click me-4</button>
+    <button id="fifth">click me-5</button>
+
+    <script>
+        function handleClick(){
+            console.log("SomeOne Clicked Me")
+        }
+        function handleClick11(){
+            console.log(new Date());
+        }
+        function handleClick22(){
+            console.log("Mouse Out")
+        }
+
+        // 11111111111111111111
+        const secondButton = document.getElementById('second');
+        secondButton.onclick = function(){
+            console.log("Second Button Click me")
+        }
+
+        // 22222222222222
+        function handleClick33(){
+            document.body.style.backgroundColor="red";
+        }
+        const thirdButton = document.getElementById('third');
+        thirdButton.onclick= handleClick33;
+
+        // 3333333333333333
+        function handleClick44(){
+            document.body.style.backgroundColor='cyan'
+        }
+        const fourthButton = document.getElementById('fourth');
+        fourthButton.addEventListener('click', handleClick44);
+
+
+        // 44444444444
+        document.getElementById('fifth').addEventListener('click', function(){
+            document.body.style.backgroundColor='green';
+        })
+    </script>
+</body>
+</html>

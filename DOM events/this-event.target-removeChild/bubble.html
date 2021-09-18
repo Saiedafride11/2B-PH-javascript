@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>My List</h1>
+        <ul id="my-List">
+            <li id="frist" class="item">Lorem ipsum dolor sit amet.</li>
+            <li class="item">Magni reprehenderit maxime voluptates odio!</li>
+            <li class="item">Illo ab esse hic. Ipsam!</li>
+            <li class="item">Fuga cumque dolore totam sunt.</li>
+            <li class="item">Illum sequi eius porro dolor.</li>
+        </ul>
+        <button id="addNew">Add Brand New Item</button>
+    </div>
+
+    <script>
+        // document.getElementById('frist').addEventListener('click', function(event){
+        //     console.log('frist item click');
+        //     event.stopPropagation();
+        // })
+
+        // document.getElementById('my-List').addEventListener('click', function(event){
+        //     console.log('ul clicked ')
+        // })
+        // document.getElementById('container').addEventListener('click', function(event){
+        //     console.log("container clicked");
+        // })
+
+
+
+        // var items = document.getElementsByTagName('li');
+        // for(var i=0; i<items.length; i++){
+        //     var item = items[i];
+        //     // console.log(item);
+        //     item.addEventListener('click', function(event){
+        //         // console.log(this)
+        //         // console.log( event.target.innerText)
+        //         // console.log( event.target.parentNode)
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+
+        document.getElementById('addNew').addEventListener('click', function(event){
+            var itemParent = document.getElementById('my-List');
+            var newItem = document.createElement('li');
+            newItem.innerText = 'Brand New Item';
+            itemParent.appendChild(newItem);
+        })
+
+
+         document.getElementById('my-List').addEventListener('click', function(event){
+            // console.log(this, event.target);
+            event.target.parentNode.removeChild(event.target);
+        })
+    </script>
+</body>
+</html>

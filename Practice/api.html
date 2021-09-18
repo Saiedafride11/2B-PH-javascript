@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lorem</h1>
+
+    <ul id="user-list">
+
+    </ul>
+
+    <input id="input-title" type="text" placeholder="title">
+    <br>
+    <br>
+    <input id="input-text" type="text" placeholder="text">
+    <br>
+    <br>
+    <button id="Submit-btn">Submit</button>
+
+    <h3 id="activity">activity</h3>
+
+    <h3 id="random-user">User</h3>
+
+    <script>
+        // const user = {
+        //     fristName: 'saied',
+        //     lastName: 'Afride',
+        //     lover:{
+        //         name: 'khalid',
+        //         id: 27
+        //     },
+        //     friendAge: [22, 21, 21]
+        // }
+
+        // const userHistory = JSON.stringify(user);
+        // console.log(userHistory);
+        // const userHistory11 = JSON.parse(userHistory);
+        // console.log(userHistory11);
+
+
+        // fetch('https://jsonplaceholder.typicode.com/todos/1')
+        // .then(response => response.json())
+        // .then(json => console.log(json))
+
+
+    //   fetch('https://jsonplaceholder.typicode.com/users')
+    //   .then(response => response.json())
+    //   .then(json =>{
+    //     userHistory(json);
+    //   })
+
+    //   function userHistory(users){
+    //         // console.log(users);
+    //         const ul = document.getElementById('user-list');
+    //         const userName = users.map(user => user.name);
+    //         for(let i = 0; i<userName.length; i++){
+    //             const user = userName[i];
+
+    //             const li = document.createElement('li');
+    //             li.innerText = user;
+    //             ul.appendChild(li)
+
+    //         }
+    //   }
+
+    // const userInfo = {title: 'foo', body: 'bar', userId: 1};
+
+    // fetch('https://jsonplaceholder.typicode.com/posts', {
+    //     method: 'POST',
+    //     body: JSON.stringify(userInfo),
+    //     headers: {
+    //         'Content-type': 'application/json; charset=UTF-8',
+    //     },
+    //     })
+    //     .then((response) => response.json())
+    //     .then((json) => console.log(json));
+
+    // const SubmitBtn = document.getElementById('Submit-btn');
+    // SubmitBtn.addEventListener('click', function(){
+    //     const inputTitle = document.getElementById('input-title').value;
+    //     const inputText = document.getElementById('input-text').value;
+
+    //     const info = {title: inputTitle, name: inputText};
+    //     inputCheck(info)
+    // })
+   
+    // function inputCheck(info){
+    //     fetch('https://jsonplaceholder.typicode.com/posts', {
+    //     method: 'POST',
+    //     body: JSON.stringify(info),
+    //     headers: {
+    //         'Content-type': 'application/json; charset=UTF-8',
+    //     },
+    //     })
+    //     .then((response) => response.json())
+    //     .then((json) => console.log(json));
+    
+    // }
+
+
+
+    // function boredApi(){
+    //     fetch('http://www.boredapi.com/api/activity/')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         // console.log(data)
+    //         document.getElementById('activity').innerText = data.activity;
+    //     })
+    // }
+    // boredApi();
+    // setInterval( () => {
+    //     boredApi();
+    // }, 1000)
+
+
+    // fetch('https://randomuser.me/api/?results')
+    // .then(response => response.json())
+    // .then(data => {
+    //         // console.log(data.results[0]);
+
+    //         const user = data.results[0];
+    //         const name = user.name;
+    //         const fullName = `${name.first} ${name.last} Afride`;
+
+    //         document.getElementById('random-user').innerText = fullName;
+
+
+    //     })
+
+
+    function randomUser() {
+        fetch('https://randomuser.me/api/?results')
+        .then(response => response.json())
+        .then(data => {
+                // console.log(data.results[0]);
+
+            const user = data.results[0];
+            const name = user.name;
+            const fullName = `${name.first} ${name.last} Afride`;
+
+            document.getElementById('random-user').innerText = fullName;
+
+
+        })
+    };
+
+    randomUser();
+    setInterval( () => {
+        randomUser();
+    }, 1000)
+    </script>
+</body>
+</html>

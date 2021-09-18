@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document dom</title>
+</head>
+<body>
+    <main>
+        <section>
+            <!-- <h3>Lorem </h3>
+            <p>Lorem Ipsum is simply dummy text</p>
+            <p>Lorem</p>
+            <p id="frist">Lorem</p>; -->
+
+            <!-- article*3>h3{article-$}+p.author+p.description>lorem30 -->
+            <article class="special">
+                <h3>article-1</h3>
+                <p class="author">author-1</p>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis molestiae aperiam similique. Est, voluptas vitae earum, porro distinctio iure expedita libero voluptatum laudantium fugiat commodi excepturi praesentium molestias quae! Repudiandae!</p>
+            </article>
+            <article class="special">
+                <h3 id=attributeCheck>article-2</h3>
+                <p class="author">author-2</p>
+                <p class="description">Molestias tempora beatae voluptatibus recusandae quibusdam, libero pariatur quam atque totam nam tempore, sunt voluptas laborum quae ad ratione quaerat distinctio quasi. Tempora illum nihil doloribus deleniti quasi voluptate culpa.</p>
+            </article>
+            <article class="special">
+                <h3>article-3</h3>
+                <p class="author">author-3</p>
+                <p class="description">Esse, mollitia numquam. Magnam quam excepturi obcaecati fugiat nostrum totam possimus ut minima! Aspernatur dignissimos harum in velit, reiciendis libero quaerat quod necessitatibus nihil ex voluptates vitae vel sit totam.</p>
+            </article>
+
+        </section>
+    </main>
+    <script>
+        // console.log(document.body);
+
+        // var result = document.getElementById("frist");
+        // result.style.color='red';
+        // result.style.backgroundColor='blue';
+        // result.style.fontSize='30px';
+
+        document.body.style.backgroundColor='yellow';
+
+        var authors = document.getElementsByClassName('author');
+        for(var i=0; i< authors.length;i++){
+            elements = authors[i];
+            console.log(elements.innerHTML);
+            elements.innerHTML = 'Lekok-' + (i + 1);
+            elements.style.backgroundColor='red';
+            elements.style.color='white';
+            elements.style.fontSize='20px';
+            elements.style.margin='20px';
+            elements.setAttribute('title', 'Saied Afride');
+        }
+
+
+
+        var special = document.querySelectorAll('.special h3');
+        for(var i=0; i<special.length;i++){
+            elements = special[i];
+            elements.style.backgroundColor='blue';
+            elements.style.color='white';
+        }
+
+
+        document.querySelector('.description').style.backgroundColor='black';
+        document.querySelector('.description').style.color='white';
+        document.querySelector('.description').style.fontSize='30px';
+    </script>
+</body>
+</html>
